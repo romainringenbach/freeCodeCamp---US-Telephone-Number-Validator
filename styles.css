@@ -1,0 +1,136 @@
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+* {
+margin: 0;
+}
+body {
+line-height: 1.5;
+-webkit-font-smoothing: antialiased;
+}
+img, picture, video, canvas, svg {
+display: block;
+max-width: 100%;
+}
+input, button, textarea, select {
+font: inherit;
+}
+p, h1, h2, h3, h4, h5, h6 {
+overflow-wrap: break-word;
+}
+#root, #__next {
+isolation: isolate;
+}
+
+/* My CSS */
+
+:root {
+  --gradient-color1: #177e89;
+  --gradient-color2: #084c61;
+  --background-color: #323031;
+  --font-color: #ffc857;
+  --border-color: #db3a34;
+
+}
+
+body {
+  background: linear-gradient(var(--gradient-color1),var(--gradient-color2));
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+  padding: calc((100vh - min(50vh,500px)) / 2) calc((100vw - min(50vh,500px)) / 2);
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
+  grid-template-rows: repeat(5,1fr);
+  column-gap: 1rem;
+  row-gap: 1rem;
+  padding: 1rem;
+
+  width: 50vh;
+  height: 50vh;
+  max-width: 500px;
+  max-height: 500px;
+}
+
+h1 {
+  grid-column-start: 1;
+  grid-column-end: span 5;
+  grid-row-start: 1;
+  grid-row-end: span 1;
+
+  color: var(--border-color);
+  font-weight: bold;
+  text-align: center;
+  font-size: 3rem;
+}
+
+#user-input {
+  grid-column-start: 1;
+  grid-column-end: span 3;
+  grid-row-start: 2;
+  grid-row-end: span 1;
+
+  padding: 1rem;
+  font-size: 1.3rem;
+}
+
+#check-btn {
+  grid-column-start: 4;
+  grid-column-end: span 1;
+  grid-row-start: 2;
+  grid-row-end: span 1;
+
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+#clear-btn {
+  grid-column-start: 5;
+  grid-column-end: span 1;
+  grid-row-start: 2;
+  grid-row-end: span 1;
+
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+#convert-btn:hover {
+  background-color: var(--border-color);
+}
+
+#results-div {
+  grid-column-start: 1;
+  grid-column-end: span 5;
+  grid-row-start: 3;
+  grid-row-end: span 3;
+
+  padding: 1rem;
+  font-size: 1.3rem;
+}
+
+.box {
+  background-color: var(--background-color);
+  border: 3px solid var(--border-color);
+  color: var(--font-color);
+  border-radius: 1rem;
+}
+
+@media (orientation : portrait) {
+  body {
+    padding: 0;
+  }
+
+  main {
+    width: 100vw;
+    height: 100vh;
+    max-width: unset;
+    max-height: unset;
+  }
+}
